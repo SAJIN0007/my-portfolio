@@ -53,26 +53,15 @@
         }
 
         /* ☀️ LIGHT MODE CSS OVERRIDES FOR MAIN TEXT */
-        html.light-mode .title-wrapper {
-            filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.35)); 
-        }
-
-        html.light-mode .title-wrapper:hover {
-            filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.5));
-        }
-
-        html.light-mode .text-sajinul {
-            color: #0f172a; 
-        }
-
-        html.light-mode .text-islam {
-            background-image: linear-gradient(to right, #f1f5f9 0%, #64748b 100%);
-        }
+        html.light-mode .title-wrapper { filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.35)); }
+        html.light-mode .title-wrapper:hover { filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.5)); }
+        html.light-mode .text-sajinul { color: #0f172a; }
+        html.light-mode .text-islam { background-image: linear-gradient(to right, #f1f5f9 0%, #64748b 100%); }
 
         /* Preloader Dynamic Background */
         .preloader-bg { background-color: #030303; transition: background-color 0.5s ease; }
         
-        /* 🌟 BACKGROUND GLOWING ANIMATIONS 🌟 */
+        /* 🌟 BACKGROUND GLOWING ANIMATIONS */
         .bg-blob-1, .bg-blob-2, .bg-blob-3 {
             position: fixed;
             border-radius: 50%;
@@ -82,143 +71,106 @@
             transition: background 0.5s ease, filter 0.5s ease;
         }
         
-        /* Blob 1: Top Left - Pure Blue */
-        .bg-blob-1 { 
-            top: -5%; left: -5%; width: 35vw; height: 35vw; 
-            background: rgba(59, 130, 246, 0.15); 
-            min-width: 250px; min-height: 250px; 
-            animation: float1 25s infinite alternate ease-in-out;
-        }
-        
-        /* Blob 2: Bottom Right - Dark Blue */
-        .bg-blob-2 { 
-            bottom: -5%; right: -5%; width: 30vw; height: 30vw; 
-            background: rgba(30, 58, 138, 0.3); 
-            min-width: 200px; min-height: 200px; 
-            animation: float2 30s infinite alternate ease-in-out;
-        }
-        
-        /* Blob 3: Center - Pure Blue */
-        .bg-blob-3 { 
-            top: 40%; left: 35%; width: 25vw; height: 25vw; 
-            background: rgba(37, 99, 235, 0.15); 
-            min-width: 180px; min-height: 180px; 
-            animation: float3 20s infinite alternate ease-in-out;
-        }
+        .bg-blob-1 { top: -5%; left: -5%; width: 35vw; height: 35vw; background: rgba(59, 130, 246, 0.15); min-width: 250px; min-height: 250px; animation: float1 25s infinite alternate ease-in-out; }
+        .bg-blob-2 { bottom: -5%; right: -5%; width: 30vw; height: 30vw; background: rgba(30, 58, 138, 0.3); min-width: 200px; min-height: 200px; animation: float2 30s infinite alternate ease-in-out; }
+        .bg-blob-3 { top: 40%; left: 35%; width: 25vw; height: 25vw; background: rgba(37, 99, 235, 0.15); min-width: 180px; min-height: 180px; animation: float3 20s infinite alternate ease-in-out; }
 
-        /* Float Keyframes */
-        @keyframes float1 {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(15vw, 10vh) scale(1.1); }
-            66% { transform: translate(5vw, 25vh) scale(0.9); }
-            100% { transform: translate(-5vw, 15vh) scale(1); }
-        }
-
-        @keyframes float2 {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(-15vw, -20vh) scale(1.15); }
-            66% { transform: translate(-30vw, -5vh) scale(0.85); }
-            100% { transform: translate(-10vw, 5vh) scale(1.05); }
-        }
-
-        @keyframes float3 {
-            0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20vw, -15vh) scale(1.2); }
-            100% { transform: translate(-15vw, 15vh) scale(0.9); }
-        }
+        @keyframes float1 { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(15vw, 10vh) scale(1.1); } 66% { transform: translate(5vw, 25vh) scale(0.9); } 100% { transform: translate(-5vw, 15vh) scale(1); } }
+        @keyframes float2 { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-15vw, -20vh) scale(1.15); } 66% { transform: translate(-30vw, -5vh) scale(0.85); } 100% { transform: translate(-10vw, 5vh) scale(1.05); } }
+        @keyframes float3 { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(20vw, -15vh) scale(1.2); } 100% { transform: translate(-15vw, 15vh) scale(0.9); } }
 
         /* ☀️ LIGHT MODE BLOB ADJUSTMENTS */
-        html.light-mode .bg-blob-1 { 
-            background: rgba(37, 99, 235, 0.45); 
-            filter: blur(90px); 
-        }
-        html.light-mode .bg-blob-2 { 
-            background: rgba(29, 78, 216, 0.45); 
-            filter: blur(90px); 
-        }
-        html.light-mode .bg-blob-3 { 
-            background: rgba(37, 99, 235, 0.4); 
-            filter: blur(90px); 
-        }
+        html.light-mode .bg-blob-1 { background: rgba(37, 99, 235, 0.45); filter: blur(90px); }
+        html.light-mode .bg-blob-2 { background: rgba(29, 78, 216, 0.45); filter: blur(90px); }
+        html.light-mode .bg-blob-3 { background: rgba(37, 99, 235, 0.4); filter: blur(90px); }
 
-        /* 📱 MOBILE SCREEN BLOB ADJUSTMENTS (MORE VISIBLE) */
+        /* 📱 MOBILE SCREEN BLOB ADJUSTMENTS */
         @media (max-width: 768px) {
-            .bg-blob-1, .bg-blob-2, .bg-blob-3 {
-                filter: blur(60px); /* ব্লার কমানো হয়েছে যাতে কালার ছাইড়ে না যায় */
-            }
-            /* Dark Mode Mobile - কালার গাঢ় করা হয়েছে */
+            .bg-blob-1, .bg-blob-2, .bg-blob-3 { filter: blur(60px); }
             .bg-blob-1 { background: rgba(59, 130, 246, 0.35); } 
             .bg-blob-2 { background: rgba(30, 58, 138, 0.5); }
             .bg-blob-3 { background: rgba(37, 99, 235, 0.35); }
-
-            /* Light Mode Mobile - কালার আরও গাঢ় করা হয়েছে */
             html.light-mode .bg-blob-1 { background: rgba(37, 99, 235, 0.6); filter: blur(60px); }
             html.light-mode .bg-blob-2 { background: rgba(29, 78, 216, 0.6); filter: blur(60px); }
             html.light-mode .bg-blob-3 { background: rgba(37, 99, 235, 0.55); filter: blur(60px); }
+        }
+
+        /* 🌟 REVISED PROFILE PICTURE INTERACTION */
+        .profile-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .profile-card:hover, .profile-card:active {
+            transform: translateY(-12px); 
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.3), 0 0 20px rgba(59, 130, 246, 0.2) inset !important;
+            border-color: rgba(59, 130, 246, 0.6) !important;
+        }
+        html.light-mode .profile-card:hover, html.light-mode .profile-card:active {
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.25), 0 0 20px rgba(37, 99, 235, 0.15) inset !important;
+            border-color: rgba(37, 99, 235, 0.5) !important;
+        }
+        .profile-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        .profile-img {
+            transition: transform 0.7s ease;
+        }
+
+        /* 🌟 NEW HOVER GLOW FOR CONTAINERS (Skills & Contact) */
+        .glow-container {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-container:hover {
+            border-color: rgba(59, 130, 246, 0.5) !important;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.25) !important;
+        }
+        html.light-mode .glow-container:hover {
+            border-color: rgba(37, 99, 235, 0.4) !important;
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.2) !important;
+        }
+
+        /* 🌟 NEW HOVER/FOCUS GLOW FOR INPUT FIELDS */
+        .glow-input {
+            transition: all 0.3s ease;
+        }
+        .glow-input:hover, .glow-input:focus {
+            border-color: rgba(59, 130, 246, 0.6) !important;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+            outline: none;
+        }
+        html.light-mode .glow-input:hover, html.light-mode .glow-input:focus {
+            border-color: rgba(37, 99, 235, 0.6) !important;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3) !important;
         }
 
         /* Slow & Smooth Navbar Animation */
         #nav-wrapper { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .logo-capsule, .menu-capsule-desktop, .menu-capsule-mobile { opacity: 0; transform: translateY(-30px); }
 
-        @keyframes smoothDropFade {
-            0% { opacity: 0; transform: translateY(-30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
+        @keyframes smoothDropFade { 0% { opacity: 0; transform: translateY(-30px); } 100% { opacity: 1; transform: translateY(0); } }
         #nav-wrapper.active .logo-capsule { animation: smoothDropFade 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
-        #nav-wrapper.active .menu-capsule-desktop,
-        #nav-wrapper.active .menu-capsule-mobile { animation: smoothDropFade 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards; }
-        
+        #nav-wrapper.active .menu-capsule-desktop, #nav-wrapper.active .menu-capsule-mobile { animation: smoothDropFade 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards; }
         .nav-hidden { transform: translateY(-150%) !important; pointer-events: none; }
 
         /* Default Capsule Design */
-        .nav-capsule {
-            background: rgba(20, 20, 20, 0.4) !important; 
-            backdrop-filter: blur(24px) saturate(150%) !important;
-            -webkit-backdrop-filter: blur(24px) saturate(150%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.05) !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; 
-            transition: all 0.4s ease;
-        }
+        .nav-capsule { background: rgba(20, 20, 20, 0.4) !important; backdrop-filter: blur(24px) saturate(150%) !important; -webkit-backdrop-filter: blur(24px) saturate(150%) !important; border: 1px solid rgba(255, 255, 255, 0.05) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; transition: all 0.4s ease; }
+        .liquid-glass { background: rgba(255, 255, 255, 0.05) !important; backdrop-filter: blur(20px) saturate(150%) !important; -webkit-backdrop-filter: blur(20px) saturate(150%) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important; transition: all 0.4s ease; }
 
-        .liquid-glass {
-            background: rgba(255, 255, 255, 0.05) !important;
-            backdrop-filter: blur(20px) saturate(150%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-            transition: all 0.4s ease;
-        }
-
-        .img-spinner {
-            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-            background: rgba(255, 255, 255, 0.02); z-index: 10; border-radius: inherit;
-        }
-        .img-spinner::after {
-            content: ""; width: 36px; height: 36px; border: 3px solid rgba(59, 130, 246, 0.2);
-            border-top-color: #3b82f6; border-radius: 50%; animation: spin 0.8s linear infinite;
-        }
+        .img-spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.02); z-index: 10; border-radius: inherit; }
+        .img-spinner::after { content: ""; width: 36px; height: 36px; border: 3px solid rgba(59, 130, 246, 0.2); border-top-color: #3b82f6; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* Lightbox Styles */
-        #lightbox {
-            display: none; position: fixed; inset: 0; z-index: 99999;
-            background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(15px);
-            align-items: center; justify-content: center; padding: 20px; transition: all 0.5s ease;
-        }
+        #lightbox { display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(15px); align-items: center; justify-content: center; padding: 20px; transition: all 0.5s ease; }
         #lightbox.active { display: flex; }
-        #lightbox img {
-            max-width: 90vw; max-height: 90vh; object-fit: contain;
-            border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 0 80px rgba(0,0,0,0.8);
-            animation: zoomIn 0.3s ease forwards; transition: opacity 0.4s ease;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.85); opacity: 0; }
-            to   { transform: scale(1);    opacity: 1; }
-        }
+        #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 80px rgba(0,0,0,0.8); animation: zoomIn 0.3s ease forwards; transition: opacity 0.4s ease; }
+        @keyframes zoomIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         
         @keyframes blink-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         .blink-dot { animation: blink-dot 1.2s step-end infinite; }
@@ -229,35 +181,27 @@
         .delay-200 { transition-delay: 0.3s; }
 
         @keyframes live-shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-        .skill-live-bg {
-            background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 25%, #60a5fa 50%, #93c5fd 75%, #3b82f6 100%);
-            background-size: 200% auto; animation: live-shimmer 2s linear infinite;
-        }
+        .skill-live-bg { background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 25%, #60a5fa 50%, #93c5fd 75%, #3b82f6 100%); background-size: 200% auto; animation: live-shimmer 2s linear infinite; }
         .skill-glow { box-shadow: 0 0 15px rgba(96, 165, 250, 0.6), 0 0 30px rgba(59, 130, 246, 0.4) !important; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-up { animation: fadeUp 0.4s ease-out forwards; }
 
-        #lightbox-close {
-            position: fixed; top: 20px; right: 24px; width: 44px; height: 44px;
-            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 22px; color: white; transition: background 0.2s; z-index: 100000;
-        }
+        #lightbox-close { position: fixed; top: 20px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 22px; color: white; transition: background 0.2s; z-index: 100000; }
         #lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
         /* Buttons */
-        .btn-3d-white { background-color: #ffffff; color: #000000; box-shadow: 0 6px 0 #a3a3a3; transition: all 0.15s ease; border: 1px solid #ffffff; }
-        .btn-3d-white:hover { transform: translateY(2px); box-shadow: 0 4px 0 #a3a3a3; }
-        .btn-3d-white:active { transform: translateY(6px); box-shadow: 0 0 0 #a3a3a3; }
+        .btn-3d-white { background-color: #ffffff; color: #000000; box-shadow: 0 6px 0 #a3a3a3; transition: all 0.3s ease; border: 1px solid #ffffff; }
+        .btn-3d-white:hover { transform: translateY(2px); box-shadow: 0 4px 0 #a3a3a3, 0 0 20px rgba(59, 130, 246, 0.6); border-color: #3b82f6; }
+        .btn-3d-white:active { transform: translateY(6px); box-shadow: 0 0 0 #a3a3a3, 0 0 10px rgba(59, 130, 246, 0.4); }
 
-        .btn-3d-glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff; box-shadow: 0 6px 0 rgba(255, 255, 255, 0.2); transition: all 0.15s ease; }
-        .btn-3d-glass:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(2px); box-shadow: 0 4px 0 rgba(255, 255, 255, 0.2); }
-        .btn-3d-glass:active { transform: translateY(6px); box-shadow: 0 0 0 rgba(255, 255, 255, 0.2); }
+        .btn-3d-glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff; box-shadow: 0 6px 0 rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
+        .btn-3d-glass:hover { background: rgba(59, 130, 246, 0.1); transform: translateY(2px); box-shadow: 0 4px 0 rgba(255, 255, 255, 0.2), 0 0 20px rgba(59, 130, 246, 0.6); border-color: rgba(59, 130, 246, 0.5); }
+        .btn-3d-glass:active { transform: translateY(6px); box-shadow: 0 0 0 rgba(255, 255, 255, 0.2), 0 0 10px rgba(59, 130, 246, 0.4); }
 
-        .btn-3d-blue { background-color: #3b82f6; color: #ffffff; border: 1px solid #3b82f6; box-shadow: 0 6px 0 #1d4ed8; transition: all 0.15s ease; }
-        .btn-3d-blue:hover { background-color: #2563eb; transform: translateY(2px); box-shadow: 0 4px 0 #1d4ed8; }
-        .btn-3d-blue:active { transform: translateY(6px); box-shadow: 0 0 0 #1d4ed8; }
+        .btn-3d-blue { background-color: #3b82f6; color: #ffffff; border: 1px solid #3b82f6; box-shadow: 0 6px 0 #1d4ed8; transition: all 0.3s ease; }
+        .btn-3d-blue:hover { background-color: #2563eb; transform: translateY(2px); box-shadow: 0 4px 0 #1d4ed8, 0 0 25px rgba(59, 130, 246, 0.8); }
+        .btn-3d-blue:active { transform: translateY(6px); box-shadow: 0 0 0 #1d4ed8, 0 0 10px rgba(59, 130, 246, 0.5); }
 
         /* ☀️ LIGHT MODE CSS OVERRIDES */
         html.light-mode body { background-color: #f8fafc; color: #0f172a; }
@@ -290,17 +234,22 @@
         html.light-mode .hover\:border-blue-500\/40:hover { border-color: rgba(37, 99, 235, 0.4) !important; }
         html.light-mode .bg-\[\#111\] { background-color: #e2e8f0 !important; }
         html.light-mode .bg-black\/40 { background-color: #ffffff !important; }
-        html.light-mode .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
         html.light-mode .hover\:bg-white\/10:hover { background-color: rgba(0,0,0,0.05) !important; }
+        
+        /* 🌟 LIGHT MODE FIX FOR SECTION DIVIDER LINES (Making them Gray) */
+        html.light-mode .border-white\/5 { border-color: rgba(0, 0, 0, 0.1) !important; }
+        html.light-mode .border-white\/10 { border-color: rgba(0, 0, 0, 0.1) !important; }
+
         html.light-mode input, html.light-mode textarea { color: #0f172a !important; }
         html.light-mode input::placeholder, html.light-mode textarea::placeholder { color: #64748b !important; }
-        html.light-mode input:focus, html.light-mode textarea:focus { border-color: #2563eb !important; box-shadow: 0 0 0 2px rgba(37, 99, 235,0.2) !important; outline: none; }
+        
         html.light-mode .btn-3d-white { background-color: #0f172a !important; color: #ffffff !important; border-color: #0f172a !important; box-shadow: 0 6px 0 #334155 !important; }
-        html.light-mode .btn-3d-white:hover { box-shadow: 0 4px 0 #334155 !important; transform: translateY(2px); }
-        html.light-mode .btn-3d-white:active { box-shadow: 0 0 0 #334155 !important; transform: translateY(6px); }
-        html.light-mode .btn-3d-glass { color: #0f172a !important; background: rgba(255, 255, 255, 0.8) !important; box-shadow: 0 6px 0 rgba(0,0,0,0.15) !important; }
-        html.light-mode .btn-3d-glass:hover { box-shadow: 0 4px 0 rgba(0,0,0,0.15) !important; transform: translateY(2px); }
-        html.light-mode .btn-3d-glass:active { box-shadow: 0 0 0 rgba(0,0,0,0.15) !important; transform: translateY(6px); }
+        html.light-mode .btn-3d-white:hover { box-shadow: 0 4px 0 #334155, 0 0 20px rgba(37, 99, 235, 0.6) !important; transform: translateY(2px); border-color: #2563eb !important; }
+        html.light-mode .btn-3d-white:active { box-shadow: 0 0 0 #334155, 0 0 10px rgba(37, 99, 235, 0.4) !important; transform: translateY(6px); }
+        
+        html.light-mode .btn-3d-glass { color: #0f172a !important; background: rgba(255, 255, 255, 0.8) !important; box-shadow: 0 6px 0 rgba(0,0,0,0.15) !important; border-color: rgba(0,0,0,0.1) !important;}
+        html.light-mode .btn-3d-glass:hover { box-shadow: 0 4px 0 rgba(0,0,0,0.15), 0 0 20px rgba(37, 99, 235, 0.5) !important; transform: translateY(2px); border-color: rgba(37, 99, 235, 0.4) !important; }
+        html.light-mode .btn-3d-glass:active { box-shadow: 0 0 0 rgba(0,0,0,0.15), 0 0 10px rgba(37, 99, 235, 0.3) !important; transform: translateY(6px); }
 
         /* 🌟 LOGO GLOW & GLASS REFLECTION */
         .logo-text-primary { color: #ffffff; text-shadow: 0 0 12px rgba(255, 255, 255, 0.5); transition: color 0.3s ease, text-shadow 0.3s ease; }
@@ -382,9 +331,11 @@
 
     <header id="about" class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-36 sm:pt-40 pb-20 sm:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 items-center">
         <div class="lg:col-span-6 relative group fade-down delay-100 max-w-sm sm:max-w-md mx-auto w-full lg:mx-0 lg:max-w-none">
-            <div class="w-full aspect-square rounded-[2rem] overflow-hidden bg-[#111] relative liquid-glass p-2 transition duration-500 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)]">
-                <img src="profile.png" fetchpriority="high" decoding="async" alt="Md. Sajinul Islam" class="w-full h-full object-cover rounded-[1.5rem] filter grayscale hover:grayscale-0 transition duration-700" onerror="this.src='profile.jpg'">
-                <div class="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 liquid-glass px-4 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-2.5 shadow-2xl z-10 backdrop-blur-xl">
+            <div class="w-full aspect-square rounded-[2rem] bg-[#111] relative liquid-glass p-2 profile-card cursor-pointer">
+                <div class="profile-img-wrap">
+                    <img src="profile.png" fetchpriority="high" decoding="async" alt="Md. Sajinul Islam" class="w-full h-full object-cover profile-img" onerror="this.src='profile.jpg'">
+                </div>
+                <div class="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 liquid-glass px-4 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-2.5 shadow-2xl z-20 backdrop-blur-xl">
                     <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_#3b82f6]"></span>
                     <span class="text-[10px] sm:text-xs font-bold text-gray-200 tracking-wider uppercase">Available for hire</span>
                 </div>
@@ -434,7 +385,7 @@
                 </p>
             </div>
 
-            <div class="liquid-glass p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-xl fade-down delay-100 skill-container">
+            <div class="liquid-glass p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-xl fade-down delay-100 skill-container glow-container">
                 <div>
                     <div class="flex justify-between text-xs sm:text-sm mb-2 sm:mb-3 font-semibold">
                         <span class="text-white uppercase tracking-wider transition duration-500">Adobe Photoshop</span>
@@ -530,13 +481,13 @@
                     <div class="pt-2">
                         <p class="text-xs sm:text-sm text-gray-600 font-mono tracking-widest uppercase mb-4 transition duration-500 font-bold">Follow Me</p>
                         <div class="flex gap-4 sm:gap-5">
-                            <a href="https://www.facebook.com/md.sajinul.islam" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/30">
+                            <a href="https://www.facebook.com/md.sajinul.islam" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/50">
                                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             </a>
-                            <a href="https://www.instagram.com/sajin_ul/" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/30">
+                            <a href="https://www.instagram.com/sajin_ul/" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/50">
                                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                             </a>
-                            <a href="https://github.com/SAJIN0007" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/30">
+                            <a href="https://github.com/SAJIN0007" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 liquid-glass flex items-center justify-center rounded-[1rem] hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-[0_0_20px_rgba(59,130,246,0.7)] transition-all duration-300 hover:text-blue-400 text-white hover:border-blue-500/50">
                                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                             </a>
                         </div>
@@ -544,7 +495,7 @@
                 </div>
             </div>
 
-            <div class="liquid-glass p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] mb-4 hover:border-blue-500/40 hover:shadow-[0_20px_40px_rgba(59,130,246,0.1)] transition-all duration-500 relative fade-down delay-100">
+            <div class="liquid-glass p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] mb-4 transition-all duration-500 relative fade-down delay-100 glow-container">
                 <h3 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Send a message</h3>
                 
                 <form id="contact-form" class="space-y-4 sm:space-y-5">
@@ -552,10 +503,10 @@
                     <input type="hidden" name="_captcha" value="false">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-                        <input type="text" name="name" placeholder="Name" required class="w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm focus:outline-none focus:border-blue-500 transition-all duration-300 text-white placeholder-gray-500">
-                        <input type="email" name="email" placeholder="Email" required class="w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm focus:outline-none focus:border-blue-500 transition-all duration-300 text-white placeholder-gray-500">
+                        <input type="text" name="name" placeholder="Name" required class="glow-input w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm text-white placeholder-gray-500">
+                        <input type="email" name="email" placeholder="Email" required class="glow-input w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm text-white placeholder-gray-500">
                     </div>
-                    <textarea rows="5" name="message" placeholder="Your Message" required class="w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm focus:outline-none focus:border-blue-500 transition-all duration-300 resize-none text-white placeholder-gray-500"></textarea>
+                    <textarea rows="5" name="message" placeholder="Your Message" required class="glow-input w-full bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-sm resize-none text-white placeholder-gray-500"></textarea>
                     
                     <button type="submit" id="submit-btn" class="w-full btn-3d-blue font-bold py-3 sm:py-4 rounded-xl sm:rounded-2xl flex justify-center items-center gap-2 cursor-pointer mb-2 transition-all text-base sm:text-lg tracking-wide">
                         <span id="btn-text">Send Message</span>

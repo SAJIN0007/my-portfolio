@@ -72,7 +72,7 @@
         /* Preloader Dynamic Background */
         .preloader-bg { background-color: #030303; transition: background-color 0.5s ease; }
         
-        /* 🌟 BACKGROUND GLOWING ANIMATIONS (CORRECTED BLUE COLOR & SIZE) 🌟 */
+        /* 🌟 BACKGROUND GLOWING ANIMATIONS 🌟 */
         .bg-blob-1, .bg-blob-2, .bg-blob-3 {
             position: fixed;
             border-radius: 50%;
@@ -85,7 +85,7 @@
         /* Blob 1: Top Left - Pure Blue */
         .bg-blob-1 { 
             top: -5%; left: -5%; width: 35vw; height: 35vw; 
-            background: rgba(59, 130, 246, 0.15); /* blue-500 */
+            background: rgba(59, 130, 246, 0.15); 
             min-width: 250px; min-height: 250px; 
             animation: float1 25s infinite alternate ease-in-out;
         }
@@ -93,15 +93,15 @@
         /* Blob 2: Bottom Right - Dark Blue */
         .bg-blob-2 { 
             bottom: -5%; right: -5%; width: 30vw; height: 30vw; 
-            background: rgba(30, 58, 138, 0.3); /* blue-900 */
+            background: rgba(30, 58, 138, 0.3); 
             min-width: 200px; min-height: 200px; 
             animation: float2 30s infinite alternate ease-in-out;
         }
         
-        /* Blob 3: Center - CORRECTED TO PURE BLUE (Previously Sky Blue) */
+        /* Blob 3: Center - Pure Blue */
         .bg-blob-3 { 
             top: 40%; left: 35%; width: 25vw; height: 25vw; 
-            background: rgba(37, 99, 235, 0.15); /* blue-600 */
+            background: rgba(37, 99, 235, 0.15); 
             min-width: 180px; min-height: 180px; 
             animation: float3 20s infinite alternate ease-in-out;
         }
@@ -127,18 +127,34 @@
             100% { transform: translate(-15vw, 15vh) scale(0.9); }
         }
 
-        /* ☀️ LIGHT MODE BLOB ADJUSTMENTS (MUCH MORE INTENSE BLUE) */
+        /* ☀️ LIGHT MODE BLOB ADJUSTMENTS */
         html.light-mode .bg-blob-1 { 
-            background: rgba(37, 99, 235, 0.45); /* Very strong blue-600 */
+            background: rgba(37, 99, 235, 0.45); 
             filter: blur(90px); 
         }
         html.light-mode .bg-blob-2 { 
-            background: rgba(29, 78, 216, 0.45); /* Very strong dark blue-700 */
+            background: rgba(29, 78, 216, 0.45); 
             filter: blur(90px); 
         }
         html.light-mode .bg-blob-3 { 
-            background: rgba(37, 99, 235, 0.4); /* Very strong blue-600 (Fixing Green) */
+            background: rgba(37, 99, 235, 0.4); 
             filter: blur(90px); 
+        }
+
+        /* 📱 MOBILE SCREEN BLOB ADJUSTMENTS (MORE VISIBLE) */
+        @media (max-width: 768px) {
+            .bg-blob-1, .bg-blob-2, .bg-blob-3 {
+                filter: blur(60px); /* ব্লার কমানো হয়েছে যাতে কালার ছাইড়ে না যায় */
+            }
+            /* Dark Mode Mobile - কালার গাঢ় করা হয়েছে */
+            .bg-blob-1 { background: rgba(59, 130, 246, 0.35); } 
+            .bg-blob-2 { background: rgba(30, 58, 138, 0.5); }
+            .bg-blob-3 { background: rgba(37, 99, 235, 0.35); }
+
+            /* Light Mode Mobile - কালার আরও গাঢ় করা হয়েছে */
+            html.light-mode .bg-blob-1 { background: rgba(37, 99, 235, 0.6); filter: blur(60px); }
+            html.light-mode .bg-blob-2 { background: rgba(29, 78, 216, 0.6); filter: blur(60px); }
+            html.light-mode .bg-blob-3 { background: rgba(37, 99, 235, 0.55); filter: blur(60px); }
         }
 
         /* Slow & Smooth Navbar Animation */
@@ -245,6 +261,10 @@
 
         /* ☀️ LIGHT MODE CSS OVERRIDES */
         html.light-mode body { background-color: #f8fafc; color: #0f172a; }
+        html.light-mode .preloader-bg { background-color: #f8fafc !important; } 
+        html.light-mode #preloader .bg-white\/5 { background-color: rgba(0, 0, 0, 0.08) !important; }
+        html.light-mode #preloader .text-gray-500 { color: #64748b !important; }
+        
         html.light-mode .text-white { color: #0f172a !important; }
         html.light-mode .text-gray-400, html.light-mode .text-gray-300 { color: #475569 !important; }
         html.light-mode .text-gray-200 { color: #334155 !important; }

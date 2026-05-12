@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects - Md. Sajinul Islam</title>
+    
+    <meta name="description" content="Portfolio of Md. Sajinul Islam, a Creative Graphic Designer specializing in brand identities, multimedia, and visually appealing content.">
+    <meta name="keywords" content="Graphic Designer, Sajinul Islam, Portfolio, UI/UX, Video Editing, Bangladesh">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light-mode');
+        }
+    </script>
+
+    <style>
+        /* Global Reset & Responsive Fixes */
+        html { width: 100%; max-width: 100vw; }
+        body { font-family: 'Outfit', sans-serif; background-color: #030303; position: relative; overflow-x: hidden; width: 100%; max-width: 100%; color: white; transition: background-color 0.5s ease; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* 🌟 FLUID TYPOGRAPHY */
+        .fluid-title { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.95; }
+        .fluid-subtitle { font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1.1; }
+
+        /* 🌟 EXACT MATCH: SAJINUL ISLAM TEXT STYLES */
+        .title-wrapper { display: inline-block; transition: all 0.4s ease; filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.4)); }
+        .text-sajinul { color: #ffffff; display: block; }
+        .text-islam { color: transparent; background-image: linear-gradient(to right, #94a3b8 0%, #334155 100%); -webkit-background-clip: text; background-clip: text; display: block; }
+
+        /* Preloader Dynamic Background */
+        .preloader-bg { background-color: #030303; transition: background-color 0.5s ease; }
+        
+        /* 🌟 BACKGROUND GLOWING ANIMATIONS */
+        .bg-blob-1, .bg-blob-2, .bg-blob-3 { position: fixed; border-radius: 50%; z-index: -1; pointer-events: none; transition: background 0.5s ease, filter 0.5s ease; }
+        .bg-blob-1 { top: -5%; left: -5%; width: 40vw; height: 40vw; background: rgba(59, 130, 246, 0.25); min-width: 400px; min-height: 400px; filter: blur(90px); animation: float1 25s infinite alternate ease-in-out; }
+        .bg-blob-2 { bottom: -10%; right: -5%; width: 35vw; height: 35vw; background: rgba(30, 58, 138, 0.35); min-width: 350px; min-height: 350px; filter: blur(90px); animation: float2 30s infinite alternate ease-in-out; }
+        .bg-blob-3 { top: 35%; left: 30%; width: 30vw; height: 30vw; background: rgba(37, 99, 235, 0.25); min-width: 300px; min-height: 300px; filter: blur(90px); animation: float3 20s infinite alternate ease-in-out; }
+
+        @keyframes float1 { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(15vw, 10vh) scale(1.1); } 66% { transform: translate(5vw, 25vh) scale(0.9); } 100% { transform: translate(-5vw, 15vh) scale(1); } }
+        @keyframes float2 { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-15vw, -20vh) scale(1.15); } 66% { transform: translate(-30vw, -5vh) scale(0.85); } 100% { transform: translate(-10vw, 5vh) scale(1.05); } }
+        @keyframes float3 { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(20vw, -15vh) scale(1.2); } 100% { transform: translate(-15vw, 15vh) scale(0.9); } }
+
+        /* 📱 MOBILE SCREEN BLOB ADJUSTMENTS */
+        @media (max-width: 768px) {
+            .bg-blob-1, .bg-blob-2, .bg-blob-3 { filter: blur(60px); }
+            .bg-blob-1 { background: rgba(59, 130, 246, 0.4); min-width: 300px; min-height: 300px; top: -10%; left: -10%; } 
+            .bg-blob-2 { background: rgba(30, 58, 138, 0.5); min-width: 280px; min-height: 280px; bottom: -10%; right: -10%; }
+            .bg-blob-3 { background: rgba(37, 99, 235, 0.4); min-width: 250px; min-height: 250px; top: 40%; left: 10%; }
+        }
+
+        /* 🌟 NEW HOVER GLOW FOR CONTAINERS */
+        .glow-container { transition: all 0.4s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-container:hover { border-color: rgba(59, 130, 246, 0.5) !important; box-shadow: 0 0 30px rgba(59, 130, 246, 0.25) !important; }
+
+        /* Navbar Animation */
+        .logo-capsule, .menu-capsule-desktop, .menu-capsule-mobile { opacity: 0; transform: translateY(-30px); }
+        @keyframes smoothDropFade { 0% { opacity: 0; transform: translateY(-30px); } 100% { opacity: 1; transform: translateY(0); } }
+        #nav-wrapper.active .logo-capsule { animation: smoothDropFade 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+        #nav-wrapper.active .menu-capsule-desktop, #nav-wrapper.active .menu-capsule-mobile { animation: smoothDropFade 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards; }
+
+        /* Default Capsule Design */
+        .nav-capsule { background: rgba(20, 20, 20, 0.4) !important; backdrop-filter: blur(24px) saturate(150%) !important; -webkit-backdrop-filter: blur(24px) saturate(150%) !important; border: 1px solid rgba(255, 255, 255, 0.05) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; transition: all 0.4s ease; }
+        .liquid-glass { background: rgba(255, 255, 255, 0.05) !important; backdrop-filter: blur(20px) saturate(150%) !important; -webkit-backdrop-filter: blur(20px) saturate(150%) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important; transition: all 0.4s ease; }
+
+        .img-spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.02); z-index: 10; border-radius: inherit; }
+        .img-spinner::after { content: ""; width: 36px; height: 36px; border: 3px solid rgba(59, 130, 246, 0.2); border-top-color: #3b82f6; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Lightbox Styles */
+        #lightbox { display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(15px); align-items: center; justify-content: center; padding: 20px; transition: all 0.5s ease; }
+        #lightbox.active { display: flex; }
+        #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 80px rgba(0,0,0,0.8); animation: zoomIn 0.3s ease forwards; transition: opacity 0.4s ease; }
+        @keyframes zoomIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .fade-down { opacity: 0; transform: translateY(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-down.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.3s; }
+
+        #lightbox-close { position: fixed; top: 20px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 22px; color: white; transition: background 0.2s; z-index: 100000; }
+        #lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+        /* 🌟 CLEAN LOGO & DOT ILLUMINATION */
+        .logo-text-primary { color: #ffffff; transition: color 0.3s ease; }
+        .logo-capsule { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; }
+        
+        @keyframes intenseGlow {
+            0% { text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6; opacity: 0.8; }
+            100% { text-shadow: 0 0 15px #60a5fa, 0 0 30px #3b82f6, 0 0 45px #3b82f6; opacity: 1; transform: scale(1.1); }
+        }
+        .dot-illumination { color: #3b82f6; display: inline-block; animation: intenseGlow 1s infinite alternate ease-in-out; }
+
+        /* ✅ PROJECT CARDS FIX (GAP & GLITCH REMOVED) ✅ */
+        .project-card { 
+            overflow: hidden; 
+            border-radius: 1.5rem; 
+            position: relative; 
+            cursor: pointer; 
+            background-color: #111; /* Fallback for transparent PNGs */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-card img { 
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            position: absolute; 
+            inset: 0; 
+        }
+        .project-card:hover img { transform: scale(1.05); }
+        .project-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%); opacity: 0; transition: opacity 0.4s ease; z-index: 10; }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-card:hover { box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2) !important; border-color: rgba(59, 130, 246, 0.5) !important; }
+
+        /* ☀️ LIGHT MODE BACKGROUND ANIMATION */
+        @keyframes lightBgAnimate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ☀️ LIGHT MODE CSS OVERRIDES */
+        html.light-mode body { 
+            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #ffffff, #f1f5f9);
+            background-size: 400% 400%;
+            animation: lightBgAnimate 15s ease infinite;
+            color: #0f172a; 
+        }
+        html.light-mode .preloader-bg { 
+            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #ffffff, #f1f5f9) !important;
+            background-size: 400% 400%;
+            animation: lightBgAnimate 15s ease infinite;
+        } 
+        
+        html.light-mode .text-white { color: #0f172a !important; }
+        html.light-mode .text-gray-400, html.light-mode .text-gray-300 { color: #475569 !important; }
+        html.light-mode .text-gray-200 { color: #334155 !important; }
+        html.light-mode .text-gray-600 { color: #64748b !important; }
+        html.light-mode .text-blue-500 { color: #1d4ed8 !important; } 
+        html.light-mode .text-blue-400 { color: #2563eb !important; } 
+        html.light-mode .bg-blue-500 { background-color: #2563eb !important; }
+        html.light-mode .hover\:text-white:hover { color: #2563eb !important; }
+        html.light-mode .img-spinner { background: rgba(0, 0, 0, 0.03); }
+        
+        html.light-mode #lightbox { background: rgba(255, 255, 255, 0.95) !important; }
+        html.light-mode #lightbox-close { color: #0f172a !important; background: rgba(0, 0, 0, 0.05) !important; border: 1px solid rgba(0, 0, 0, 0.1) !important; }
+        html.light-mode #lightbox-close:hover { background: rgba(0, 0, 0, 0.15) !important; }
+        html.light-mode #lightbox img { border-color: rgba(0, 0, 0, 0.1) !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important; }
+        
+        html.light-mode .nav-capsule { background: rgba(255, 255, 255, 0.6) !important; border: 1px solid rgba(0, 0, 0, 0.05) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; }
+        html.light-mode .liquid-glass { background: rgba(255, 255, 255, 0.5) !important; border: 1px solid rgba(0, 0, 0, 0.05) !important; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important; }
+        html.light-mode .glow-container:hover { border-color: rgba(37, 99, 235, 0.4) !important; box-shadow: 0 0 30px rgba(37, 99, 235, 0.2) !important; }
+        
+        /* Light Mode Fixes for Project Elements */
+        html.light-mode .project-card { border: 1px solid rgba(0,0,0,0.05); background-color: #ffffff; }
+        html.light-mode .project-card:hover { border-color: rgba(37, 99, 235, 0.4) !important; box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15) !important; }
+        html.light-mode .project-overlay h3, html.light-mode .project-overlay span { color: #ffffff !important; }
+        html.light-mode .logo-text-primary { color: #0f172a !important; }
+        html.light-mode .logo-capsule { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; }
+        html.light-mode .dot-illumination { color: #2563eb; }
+
+        html.light-mode .bg-blob-1 { background: rgba(37, 99, 235, 0.45); }
+        html.light-mode .bg-blob-2 { background: rgba(29, 78, 216, 0.45); }
+        html.light-mode .bg-blob-3 { background: rgba(37, 99, 235, 0.4); }
+        
+        @media (max-width: 768px) {
+            html.light-mode .bg-blob-1 { background: rgba(37, 99, 235, 0.6); }
+            html.light-mode .bg-blob-2 { background: rgba(29, 78, 216, 0.6); }
+            html.light-mode .bg-blob-3 { background: rgba(37, 99, 235, 0.55); }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+
+    <div class="bg-blob-1"></div>
+    <div class="bg-blob-2"></div>
+    <div class="bg-blob-3"></div>
+
+    <div id="preloader" class="fixed inset-0 z-[100000] preloader-bg flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="relative flex items-center justify-center mb-10 w-24 h-24">
+            <div class="absolute inset-0 border-2 border-blue-500/40 rounded-full animate-ping"></div>
+            <div class="w-full h-full rounded-full flex items-center justify-center z-10" style="background: rgba(59, 130, 246, 0.1); backdrop-filter: blur(10px);">
+                <div class="flex items-baseline font-black tracking-tighter text-4xl select-none uppercase">
+                    <span class="logo-text-primary">SA</span>
+                    <span class="dot-illumination ml-0.5">.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="font-mono text-xs text-gray-500 tracking-[0.2em] uppercase mb-5 h-4 flex items-center justify-center">
+            <span id="boot-text">System Boot...</span>
+        </div>
+
+        <div class="w-64 md:w-80 h-[3px] bg-white/5 rounded-full overflow-hidden relative">
+            <div id="boot-progress" class="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-600 to-blue-400 w-0 transition-all duration-200"></div>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox(event)">
+        <button id="lightbox-close" onclick="closeLightboxBtn()">✕</button>
+        <div id="lightbox-spinner" class="img-spinner" style="display:none; background:transparent;"></div>
+        <img id="lightbox-img" src="" alt="Project Full View" class="opacity-0">
+    </div>
+
+    <nav class="fixed top-6 sm:top-8 w-full z-50" id="nav-wrapper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between gap-4 relative w-full">
+            
+            <a href="index.html" class="nav-capsule logo-capsule h-12 sm:h-14 px-6 rounded-full flex items-center justify-center hover:scale-105 transition duration-300 cursor-pointer shrink-0">
+                <div class="flex items-baseline font-black tracking-tighter text-xl sm:text-2xl select-none uppercase">
+                    <span class="logo-text-primary transition-colors duration-300">SA</span>
+                    <span class="dot-illumination ml-0.5">.</span>
+                </div>
+            </a>
+            
+            <div class="nav-capsule menu-capsule-desktop h-12 sm:h-14 px-8 hidden md:flex items-center justify-center rounded-full shrink-0">
+                <ul class="flex items-center gap-6 lg:gap-8 text-sm text-gray-400 font-semibold tracking-wide">
+                    <li><a href="index.html#about" class="hover:text-white transition">About</a></li>
+                    <li><a href="index.html#skills" class="hover:text-white transition">Skills</a></li>
+                    <li><a href="index.html#testimonials" class="hover:text-white transition">Reviews</a></li>
+                    <li><a href="projects.html" class="text-white transition">Projects</a></li>
+                    <li><a href="index.html#contact" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-capsule menu-capsule-mobile h-12 sm:h-14 px-5 flex md:hidden items-center justify-center rounded-full shrink-0">
+                <button id="mobile-menu-btn" class="text-gray-400 hover:text-white transition flex items-center justify-center p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+
+            <div id="mobile-dropdown" class="absolute top-full right-0 mt-3 w-48 liquid-glass rounded-2xl p-4 flex flex-col gap-4 opacity-0 pointer-events-none translate-y-[-10px] transition-all duration-300 md:hidden shadow-2xl">
+                <a href="index.html#about" class="text-gray-300 hover:text-white text-sm font-semibold transition mobile-link">About</a>
+                <a href="index.html#skills" class="text-gray-300 hover:text-white text-sm font-semibold transition mobile-link">Skills</a>
+                <a href="index.html#testimonials" class="text-gray-300 hover:text-white text-sm font-semibold transition mobile-link">Reviews</a>
+                <a href="projects.html" class="text-blue-400 text-sm font-semibold transition mobile-link">Projects</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-white text-sm font-semibold transition mobile-link">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-40 pb-16 w-full">
+        <div class="fade-down">
+            <div class="flex items-center gap-3 sm:gap-4 mb-4">
+                <span class="w-8 sm:w-10 h-[2px] bg-blue-500 shadow-[0_0_8px_#3b82f6]"></span>
+                <p class="text-blue-500 text-xs sm:text-sm tracking-[0.25em] font-mono uppercase font-semibold">Portfolio Showcase</p>
+            </div>
+            
+            <h1 class="fluid-subtitle font-black uppercase mb-6 tracking-tight drop-shadow-md">
+                My <span class="text-gray-600">Projects</span>
+            </h1>
+            
+            <p class="text-gray-400 text-base sm:text-lg max-w-2xl font-light">
+                Explore a collection of my latest works ranging from UI/UX design, brand identity, to creative video edits and AI generations.
+            </p>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-28 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            
+            <div class="project-card liquid-glass glow-container fade-down w-full h-full aspect-square" onclick="openLightbox('project1.png')">
+                <img src="project1.png" alt="Project 1">
+                <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white">Project 01</h3>
+                </div>
+            </div>
+
+            <div class="project-card liquid-glass glow-container fade-down delay-100 w-full h-full aspect-square" onclick="openLightbox('project2.png')">
+                <img src="project2.png" alt="Project 2">
+                <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white">Project 02</h3>
+                </div>
+            </div>
+
+            <div class="project-card liquid-glass glow-container fade-down delay-200 w-full h-full aspect-square" onclick="openLightbox('project3.png')">
+                <img src="project3.png" alt="Project 3">
+                <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white">Project 03</h3>
+                </div>
+            </div>
+
+            <div class="project-card liquid-glass glow-container fade-down w-full h-full aspect-square" onclick="openLightbox('project4.png')">
+                <img src="project4.png" alt="Project 4">
+                <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 class="text-xl font-bold text-white">Project 04</h3>
+                </div>
+            </div>
+
+            <div class="project-card liquid-glass glow-container fade-down delay-100 md:col-span-2 w-full h-full aspect-video md:aspect-[2/1]" onclick="openLightbox('project5.png')">
+                <img src="project5.png" alt="Project 5">
+                <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                    <span class="text-blue-400 text-xs font-mono font-bold tracking-widest uppercase mb-1">Featured Work</span>
+                    <h3 class="text-2xl font-bold text-white">Project 05 (Featured)</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-8 sm:py-10 text-[10px] sm:text-xs text-gray-600 font-mono tracking-[0.1em] sm:tracking-[0.2em] border-t border-white/5 transition duration-500 font-bold fade-down delay-100">
+        © 2024 MD. SAJINUL ISLAM. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script>
+        // --- Mobile Dropdown Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if(mobileMenuBtn && mobileDropdown) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDropdown.classList.toggle('opacity-0');
+                mobileDropdown.classList.toggle('pointer-events-none');
+                mobileDropdown.classList.toggle('translate-y-[-10px]');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileDropdown.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+                });
+            });
+            
+            document.addEventListener('click', (e) => {
+                if(!mobileMenuBtn.contains(e.target) && !mobileDropdown.contains(e.target)) {
+                    mobileDropdown.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+                }
+            });
+        }
+
+        // --- Intersection Observer for Scroll Animations ---
+        let revealObserver;
+        try {
+            revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0, rootMargin: "0px 0px 50px 0px" }); 
+        } catch(e) {}
+
+        // --- Preloader & Boot Initialization ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.getElementById("preloader");
+            const bootText = document.getElementById("boot-text");
+            const bootProgress = document.getElementById("boot-progress");
+            
+            let progress = 0;
+            
+            const unlockSite = () => {
+                if(preloader) {
+                    preloader.style.opacity = "0";
+                    preloader.style.pointerEvents = "none";
+                    setTimeout(() => preloader.remove(), 500); 
+                }
+                
+                const navEl = document.getElementById('nav-wrapper');
+                if (navEl) navEl.classList.add('active');
+                
+                try {
+                    if(revealObserver) {
+                        document.querySelectorAll('.fade-down').forEach(el => revealObserver.observe(el));
+                    }
+                } catch(e){}
+
+                setTimeout(() => {
+                    document.querySelectorAll('.fade-down').forEach(el => el.classList.add('active'));
+                }, 1000);
+            };
+
+            const finishBoot = () => {
+                if(bootProgress) bootProgress.style.width = "100%";
+                if(bootText) {
+                    bootText.innerText = "System Ready.";
+                    bootText.style.color = "#3b82f6"; 
+                }
+                setTimeout(unlockSite, 300);
+            };
+            
+            if (preloader) {
+                const bootInterval = setInterval(() => {
+                    progress += 25;
+                    if (progress >= 100) {
+                        clearInterval(bootInterval);
+                        finishBoot();
+                    } else {
+                        if(bootProgress) bootProgress.style.width = `${progress}%`;
+                    }
+                }, 100); 
+                
+                setTimeout(() => {
+                    try { clearInterval(bootInterval); } catch(e){}
+                    unlockSite();
+                }, 1000);
+            } else {
+                unlockSite();
+            }
+        });
+
+        // --- Lightbox Functions ---
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const spinner = document.getElementById('lightbox-spinner');
+            
+            if(img && lightbox && spinner) {
+                lightbox.classList.add('active');
+                img.style.opacity = '0';
+                spinner.style.display = 'flex';
+                img.onload = () => {
+                    spinner.style.display = 'none';
+                    img.style.opacity = '1';
+                };
+                img.src = src;
+            }
+        }
+
+        function closeLightboxBtn() {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            if(lightbox) {
+                lightbox.classList.remove('active');
+                if(img) img.style.opacity = '0'; 
+            }
+        }
+
+        function closeLightbox(event) {
+            const img = document.getElementById('lightbox-img');
+            if (event.target !== img) closeLightboxBtn();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightboxBtn();
+        });
+    </script>
+
+</body>
+</html>
